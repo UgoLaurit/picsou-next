@@ -81,3 +81,38 @@ model BankAccount {
   owner   User?  @relation(fields: [ownerId], references: [id])
   ownerId Int?
 }
+
+model Transaction {
+  id                    Int                     @id @default(autoincrement())
+  date                  DateTime
+  label                 String
+  value                 Decimal
+  type                  TransactionType?        @relation(fields: [typeId], references: [id])
+  typeId                Int?
+  subcategory           TransactionSubcategory? @relation(fields: [subcategoryId], references: [id])
+  subcategoryId         Int?
+  TransactionCategory   TransactionCategory?    @relation(fields: [transactionCategoryId], references: [id])
+  transactionCategoryId Int?
+}
+
+model TransactionType {
+  id          Int           @id @default(autoincrement())
+  name        String
+  Transaction Transaction[]
+}
+
+model TransactionCategory {
+  id                     Int                      @id @default(autoincrement())
+  name                   String
+  color                  String
+  Transaction            Transaction[]
+  TransactionSubcategory TransactionSubcategory[]
+}
+
+model TransactionSubcategory {
+  id          Int                  @id @default(autoincrement())
+  name        String
+  category    TransactionCategory? @relation(fields: [categoryId], references: [id])
+  categoryId  Int?
+  Transaction Transaction[]
+}
