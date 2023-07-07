@@ -2,7 +2,7 @@
 
 import './globals.css'
 
-import AuthProvider from './components/auth/AuthProvider'
+import AuthProvider from '../components/auth/AuthProvider'
 import { SessionProvider } from 'next-auth/react'
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
