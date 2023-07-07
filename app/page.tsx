@@ -2,7 +2,7 @@
 
 import { useSession } from 'next-auth/react'
 
-export default function Home() {
+const Home = () => {
   const { data: session, status } = useSession({
     required: true,
   })
@@ -14,3 +14,5 @@ export default function Home() {
     return <div>Session!</div>
   }
 }
+
+export default Home
