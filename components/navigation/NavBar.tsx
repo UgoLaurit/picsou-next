@@ -4,6 +4,7 @@ import { AssetIcon } from '@/assets/icons/AssetIcon'
 import { InvestIcon } from '@/assets/icons/InvestIcon'
 import Link from 'next/link'
 import { SavingsIcon } from '@/assets/icons/SavingsIcon'
+import { TransactionsIcon } from '@/assets/icons/TransactionsIcon'
 import { UploadIcon } from '@/assets/icons/UploadIcon'
 import { WalletIcon } from '@/assets/icons/WalletIcon'
 import { usePathname } from 'next/navigation'
@@ -29,7 +30,7 @@ export const NavBar = () => {
   return (
     <>
       <nav className='h-screen w-20 bg-[#3B4252] text-[#FFFFFF] relative border-r-2 border-[#2E3440]'>
-        <ul className='flex flex-col items-center h-full gap-12 px-3 py-4'>
+        <ul className='flex flex-col items-center justify-between h-full gap-12 px-3 py-4'>
           <li className={`${pathname === '/' ? 'active' : ''}`}>
             <Link href='/'>
               <img src='/icon.png' className='w-12 h-12' />
@@ -60,6 +61,15 @@ export const NavBar = () => {
                   <AssetIcon color={'#415161'} />
                 </Link>
               </li>
+              <li
+                className={`${
+                  pathname === '/ugo/transactions' ? 'active' : ''
+                }`}
+              >
+                <Link href='/ugo/transactions'>
+                  <TransactionsIcon color={'#415161'} />
+                </Link>
+              </li>
             </ul>
           </li>
 
@@ -83,6 +93,15 @@ export const NavBar = () => {
                   <SavingsIcon color={'#485e5e'} />
                 </Link>
               </li>
+              <li
+                className={`${
+                  pathname === '/joint-account/transactions' ? 'active' : ''
+                }`}
+              >
+                <Link href='/joint-account/transactions'>
+                  <TransactionsIcon color={'#415161'} />
+                </Link>
+              </li>
             </ul>
           </li>
 
@@ -103,10 +122,19 @@ export const NavBar = () => {
                   <AssetIcon color={'#766646'} />
                 </Link>
               </li>
+              <li
+                className={`${
+                  pathname === '/rima/transactions' ? 'active' : ''
+                }`}
+              >
+                <Link href='/rima/transactions'>
+                  <TransactionsIcon color={'#415161'} />
+                </Link>
+              </li>
             </ul>
           </li>
 
-          <li className={`mt-auto ${pathname === '/upload' ? 'active' : ''}`}>
+          <li className={`${pathname === '/upload' ? 'active' : ''}`}>
             <Link href='/upload'>
               <UploadIcon color={'#FFFFFF'} />
             </Link>
