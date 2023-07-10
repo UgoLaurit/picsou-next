@@ -30,7 +30,7 @@ export const NavBar = () => {
     <>
       <nav className='h-screen w-20 bg-[#3B4252] text-[#FFFFFF] relative border-r-2 border-[#2E3440]'>
         <ul className='flex flex-col items-center h-full gap-12 px-3 py-4'>
-          <li>
+          <li className={`${pathname === '/' ? 'active' : ''}`}>
             <Link href='/'>
               <img src='/icon.png' className='w-12 h-12' />
             </Link>
