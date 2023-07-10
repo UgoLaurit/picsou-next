@@ -155,10 +155,10 @@ export const NavBar = () => {
             </ul>
           </li>
 
-          <li className='mt-auto'>
-            <button>
+          <li className={`mt-auto ${pathname === '/upload' ? 'active' : ''}`}>
+            <Link href='/upload' className='flex flex-row items-center gap-2'>
               <UploadIcon color={'#FFFFFF'} />
-            </button>
+            </Link>
           </li>
         </ul>
 
